@@ -371,19 +371,19 @@ var gameState = {
     function logAnswer() {
         var submittedName = document.getElementById("name").value.toLowerCase();
         var currentPerson = people[gameState.currentStep];
-        fetch(
+        /*fetch(
         'https://qqnwfvcnkwgyjooclhdo.supabase.co/rest/v1/votes',
         {
             headers: {
-            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNTU4NTk2LCJleHAiOjE5NTgxMzQ1OTZ9.IrUyCjBz1dwfWp65PriCegdjbHwtBzBTdIx8QVsTuns",
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNTU4NTk2LCJleHAiOjE5NTgxMzQ1OTZ9.IrUyCjBz1dwfWp65PriCegdjbHwtBzBTdIx8QVsTuns",
+            apikey: "nothing to see here",
+            Authorization: "Bearer ring bearer or ring bear?",
             "Content-Type": "application/json",
             "Prefer": "return=representation"
             },
             method: "POST",
             body: JSON.stringify({ "real": currentPerson[0], "input": submittedName, "submitter": you})
         }
-        )
+        )*/
     }
     function skip() {
         logAnswer();
