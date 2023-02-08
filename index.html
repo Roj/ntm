@@ -371,30 +371,27 @@ var gameState = {
     function logAnswer() {
         var submittedName = document.getElementById("name").value.toLowerCase();
         var currentPerson = people[gameState.currentStep];
-        /*fetch(
-        'https://qqnwfvcnkwgyjooclhdo.supabase.co/rest/v1/votes',
+        fetch(
+        'https://kgmyagknslhmminjvido.supabase.co/rest/v1/votes',
         {
             headers: {
-            apikey: "nothing to see here",
-            Authorization: "Bearer ring bearer or ring bear?",
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtnbXlhZ2tuc2xobW1pbmp2aWRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU4NzcxNjAsImV4cCI6MTk5MTQ1MzE2MH0.Qx8sqIPeFl_RUwpq5RsVtep17Vyz_eSWbGr8YKykjEM",
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtnbXlhZ2tuc2xobW1pbmp2aWRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU4NzcxNjAsImV4cCI6MTk5MTQ1MzE2MH0.Qx8sqIPeFl_RUwpq5RsVtep17Vyz_eSWbGr8YKykjEM",
             "Content-Type": "application/json",
             "Prefer": "return=representation"
             },
             method: "POST",
             body: JSON.stringify({ "real": currentPerson[0], "input": submittedName, "submitter": you})
         }
-        )*/
+        )
     }
     function skip() {
         logAnswer();
         nextStep();
     }
     function submitName() {
-        console.log("submitted")
         var submittedName = document.getElementById("name").value.toLowerCase();
         logAnswer();
-        console.log(people[gameState.currentStep][1])
-        console.log(submittedName)
         if(people[gameState.currentStep][1].includes(submittedName)) {
             gameState.score = gameState.score + 1;
         }
