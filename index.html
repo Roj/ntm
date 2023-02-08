@@ -165,7 +165,7 @@
         <input type="button" value="Submit" id="submit" class="button-7">
         <input type="button" value="Skip" id="skip" class="button-8"/>
         <br/>
-        <b>Current score:</b> <span id="score">0</span> correct out of <span id="step">0</span>
+        <b>Current score:</b> <span id="score">0</span> correct out of <span id="step">0</span> so far (total <span id="total"></span>).
         <div id="endPane">
 
         </div>
@@ -334,12 +334,13 @@ var gameState = {
 (function() {
     function endScreen() {
         document.getElementById("finalScore").innerHTML = gameState.score;
-        document.getElementById("finalStep").innerHTML = gameState.currentStep;
+        document.getElementById("finalStep").innerHTML = gameState.gameLength;
         document.getElementById("endScreen").style.display="block";
         document.getElementById("endPane").style.display="block";
         document.getElementById("scoreMessage").innerHTML = scoreMessages[gameState.gameMode][Math.floor(gameState.score/10)];
     }
     function nextStep() {
+        document.getElementById("total").innerHTML = gameState.gameLength-1;
         if (gameState.currentStep == gameState.gameLength - 1) {
             endScreen();
             return;
@@ -403,14 +404,17 @@ var gameState = {
     function setDifficultyEasy(e) {
         gameState.gameLength = 11;
         gameState.gameMode = "easy";
+        document.getElementById("total").innerHTML = gameState.gameLength;
     }
     function setDifficultyMedium(e) {
-        gameState.gameLength = 30;
+        gameState.gameLength = 31;
         gameState.gameMode = "medium";
+        document.getElementById("total").innerHTML = gameState.gameLength;
     }
     function setDifficultyHard(e) {
         gameState.gameLength = people.length;
         gameState.gameMode = "hard";
+        document.getElementById("total").innerHTML = gameState.gameLength;
     }
     nextStep();
     document.getElementById("submit").addEventListener("click", submitName)
