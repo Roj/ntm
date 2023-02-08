@@ -55,8 +55,10 @@
     border: #1D4281 7px solid;
     border-radius: 20px;
     padding: 10px;
-    background: white;
+    background: #1D4281;
+    color: white;
     display: none;
+    box-shadow: #2f2f2f 0px 0px 5px;
 }
 /* CSS */
 .button-7 {
@@ -170,7 +172,7 @@
         <div id="endScreen">
             <h3>That's all!</h3>
             <p>You got <span id="finalScore">0</span> out of <span id="finalStep">0</span> correct!</p>
-            <p>With that score, <span id="scoreMessage"></span></p>
+            <p><span id="scoreMessage"></span></p>
         </div>
         <script language="javascript" type="text/javascript">
 function uuidv4() {
@@ -179,14 +181,33 @@ function uuidv4() {
   );
 }
 var you = uuidv4();
-var scoreMessages = [
-    "let's just hope you are a new mutter :)",
-    "you probably keep to your team!",
-    "you probably don't pay much attention to company weeklies, huh?",
-    "you know around half the company!",
-    "you must be Aldo!",
-    "you must be a founder!"
-]
+var scoreMessages = {
+    "easy": [
+        "Let's just hope you were just testing out the game, because that score.. yuck!",
+        "Go try out an adult mode now."
+    ],
+    "medium": [
+        "You didn't challenge yourself with the game difficulty, and for good reason!",
+        "Let's just hope you are a new mutter :)",
+        "You probably keep to your team, huh?", // 20-29
+        "You're on your way to a good performance bonus.",
+        "You came, you saw, you conquered.",
+        "You. I like you.", // 51-
+    ],
+    "hard": [
+        "Did you just slam enter on all the prompts?", // 0-9
+        "Did you give up halfway through?",
+        "Kudos on choosing the hardest game mode knowing so little people. I'd like to have that self-confidence!",
+        "You probably keep to your team, huh?",
+        "You could pay a bit more attention in company meetings.",
+        "You're starting to know most of the company.", // 51-
+        "You're on your way to a good performance bonus.",
+        "You must be Aldo!", // 71-
+        "What? This score.. it's impossible! No one could have done this! This defies all laws of existence! No one can know this much!", // 81-
+        "Space bends around you. Galaxies look at you in awe. Your team mates can't look at you in the eye; you look at them, for you know everything. Their names. Their faces. The day of their first pull request, and the day of their last one, the day of their final breath. This score proves that you're different. Not a mutter, not a mere mortal, you're something else. You trascend."
+    ]
+}
+
 var people = [
 ["image0.png", ["aldo", "aldobot", "aoelvp"]],
 ["image1.png", ["javi.tsx", "javi", "javier"]],
@@ -305,7 +326,8 @@ var gameState = {
     currentStep: 0,
     score: 0,
     imgElement: undefined,
-    gameLength: people.length
+    gameLength: people.length,
+    gameMode: "hard"
 };
 
 
@@ -315,7 +337,7 @@ var gameState = {
         document.getElementById("finalStep").innerHTML = gameState.currentStep;
         document.getElementById("endScreen").style.display="block";
         document.getElementById("endPane").style.display="block";
-        document.getElementById("scoreMessage").innerHTML = scoreMessages[Math.floor(gameState.score/10)];
+        document.getElementById("scoreMessage").innerHTML = scoreMessages[gameState.gameMode][Math.floor(gameState.score/10)];
     }
     function nextStep() {
         if (gameState.currentStep == gameState.gameLength - 1) {
@@ -379,13 +401,16 @@ var gameState = {
         }
     }
     function setDifficultyEasy(e) {
-        gameState.gameLength = 10;
+        gameState.gameLength = 11;
+        gameState.gameMode = "easy";
     }
     function setDifficultyMedium(e) {
         gameState.gameLength = 30;
+        gameState.gameMode = "medium";
     }
     function setDifficultyHard(e) {
         gameState.gameLength = people.length;
+        gameState.gameMode = "hard";
     }
     nextStep();
     document.getElementById("submit").addEventListener("click", submitName)
