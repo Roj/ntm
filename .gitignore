@@ -1,0 +1,4 @@
+__pycache__
+ntm/static/img/*.jpg
+ntm/static/img/*.jpeg
+ntm/static/img/*.png

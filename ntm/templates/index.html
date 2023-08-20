@@ -1,0 +1,331 @@
+<html>
+    <head>
+        <title>Name that mutter</title>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+        <style>
+@media screen and (min-width: 1001px) {
+    body {
+        max-width: 800px;
+        margin: 10px auto;
+
+        background: #f2f2f2;
+        background-image: radial-gradient(#eeeeee 3px, transparent 0);
+        background-size: 20px 20px;
+        background-position: -19px -19px;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+@media screen and (max-width: 1000px) {
+    body {
+        background: #f2f2f2;
+        margin: 10px auto;
+        max-width: 500px;
+        font-size: 1.7em;
+        background-image: radial-gradient(#eeeeee 3px, transparent 0);
+        background-size: 20px 20px;
+        background-position: -19px -19px;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+h1 {
+    font-weight: 700;
+}
+h3 { font-weight: 600;}
+#face {
+    width: 500px;
+    margin: 20px auto;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+}
+#face img {
+    height: 300px;
+    margin: 0px auto;
+    border-radius: 10px;
+    box-shadow: #888888 0px 0px 10px;
+}
+#endPane {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+}
+#endScreen {
+    position: absolute;
+    top: 200px;
+    width: 800px;
+    border: #1D4281 7px solid;
+    border-radius: 20px;
+    padding: 10px;
+    background: #1D4281;
+    color: white;
+    display: none;
+    box-shadow: #2f2f2f 0px 0px 5px;
+}
+/* CSS */
+.button-7 {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-7:hover,
+.button-7:focus {
+  background-color: #07c;
+}
+
+.button-7:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-7:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+/* CSS */
+.button-8 {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+.gamebox {
+    display: flex;
+    align-items: stretch;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, .4);
+    border: black 2px solid;
+}
+.gamestate {
+    flex: 1 0px;
+
+}
+.gamecontrols {
+    flex: 1 0px;
+}
+.gameheader {
+    flex: 3 100%;
+    text-align: center;
+}
+        </style>
+    </head>
+    <body>
+        <h1>Name the muttito!</h1>
+        <p>In Argentina, the third Sunday of August we celebrate the children's day. 
+            While the date varies by country, they all conmemorate the same thing: the rights of children worldwide.
+            Among other things, this includes the <i>Convention on the Rights of the Child</i>. It is most widely ratified human rights treaty in history. </p>
+        <p>Childhood is a special, protected time, in which children must be allowed to grow, learn, play, develop and flourish with dignity. </p>
+        <p>We want to celebrate this day by reminiscing on the muttitos that went on to become great mutters!</p>
+        <p>Try your luck at guessing who's who, and be sure to share your score later in <b>#random</b>!</p>
+        
+        <div class="gamebox">
+            <div class="gameheader">
+                <h3 id="gameheader-title">Who's this beautiful muttito?</h3>
+            </div>    
+            <div class="gamestate">
+                <div id="face"></div>
+            </div>
+            <div class="gamecontrols">
+                <p>Select the correct option:</p>
+                <ul>
+                    <li><input type="button" value="Pedro" class="button-7 gameoption"></li>
+                    <li><input type="button" value="Franca" class="button-7 gameoption"></li>
+                    <li><input type="button" value="Cisco" class="button-7 gameoption"></li>
+                    <li><input type="button" value="Ale R." class="button-7 gameoption"></li>
+                </ul>
+            </div>
+            
+            <br/>
+        </div>
+        
+        <b>Current score:</b> <span id="score">0</span> correct out of <span id="step">0</span> so far (total <span id="total"></span>).
+        <div id="endPane">
+
+        </div>
+        <div id="endScreen">
+            <h3>That's all!</h3>
+            <p>You got <span id="finalScore">0</span> out of <span id="finalStep">0</span> correct!</p>
+            <p><span id="scoreMessage"></span></p>
+        </div>
+        <script language="javascript" type="text/javascript">
+var scoreMessages = {
+    "easy": [
+        "Let's just hope you were just testing out the game, because that score.. yuck!",
+        "Go try out an adult mode now."
+    ],
+    "medium": [
+        "You didn't challenge yourself with the game difficulty, and for good reason!",
+        "Let's just hope you are a new mutter :)",
+        "You probably keep to your team, huh?", // 20-29
+        "You're on your way to a good performance bonus.",
+        "You came, you saw, you conquered.",
+        "You. I like you.", // 51-
+    ],
+    "hard": [
+        "Did you just slam enter on all the prompts?", // 0-9
+        "Did you give up halfway through?",
+        "Kudos on choosing the hardest game mode knowing so little people. I'd like to have that self-confidence!",
+        "You probably keep to your team, huh?",
+        "You could pay a bit more attention in company meetings.",
+        "You're starting to know most of the company.", // 51-
+        "You're on your way to a good performance bonus.",
+        "You must be Aldo!", // 71-
+        "What? This score.. it's impossible! No one could have done this! This defies all laws of existence! No one can know this much!", // 81-
+        "Space bends around you. Galaxies look at you in awe. Your team mates can't look at you in the eye; you look at them, for you know everything. Their names. Their faces. The day of their first pull request, and the day of their last one, the day of their final breath. This score proves that you're different. Not a mutter, not a mere mortal, you're something else. You trascend."
+    ]
+}
+
+
+async function createGame() {
+    const request = await fetch("/game/new"); 
+    const game = await request.json()
+    return game;
+}
+createGame().then(game => {
+    const questions = game.questions;
+    var gameState = {
+        currentStep: 0,
+        score: 0,
+        imgElement: undefined,
+        gameLength: game.game_length,
+        gameId: game.game_id
+    };
+    const options  = document.getElementsByClassName("gameoption");
+    function endScreen() {
+        document.getElementById("finalScore").innerHTML = gameState.score;
+        document.getElementById("finalStep").innerHTML = gameState.gameLength;
+        document.getElementById("endScreen").style.display="block";
+        document.getElementById("endPane").style.display="block";
+        document.getElementById("scoreMessage").innerHTML = scoreMessages[gameState.gameMode][Math.floor(gameState.score/10)];
+    }
+    function nextStep() {
+        document.getElementById("total").innerHTML = gameState.gameLength-1;
+        if (gameState.currentStep == gameState.gameLength - 1) {
+            endScreen();
+            return;
+        }
+        if (gameState.currentStep == gameState.gameLength - 2) {
+            document.getElementById("gameheader-title").innerHTML = "<b>Which one is Pedro?</b>"
+        }
+        if (gameState.imgElement) {
+            // Not first call
+            gameState.currentStep = gameState.currentStep + 1;
+            document.getElementById('face').removeChild(gameState.imgElement);
+        }
+        gameState.imgElement = document.createElement('img');
+        gameState.imgElement.src = 'static/img/'+questions[gameState.currentStep].filename;
+        for (let i=0; i<4; i++) {
+            options[i].value = questions[gameState.currentStep].options[i];
+        }
+
+        document.getElementById('face').appendChild(gameState.imgElement);
+        document.getElementById("step").innerHTML = gameState.currentStep;
+    }
+    function updateScore() {
+        document.getElementById("score").innerHTML = gameState.score;
+    }
+    function skip() {
+        logAnswer();
+        nextStep();
+    }
+    function submit(event) {
+        var submittedName = event.target.value;
+        console.log("Clicked on " + submittedName);
+        const answer_data = {
+            "game_id": gameState.gameId,
+            "question_filename": questions[gameState.currentStep].filename,
+            "answer": submittedName,
+        }
+        console.log(answer_data);
+        fetch("/game/answer", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(
+                answer_data
+            )
+        }).then(response => {
+            response.text().then(text => {
+                console.log("Text is " + text)    
+                if (text == "Correct") {
+                    gameState.score = gameState.score + 1;
+                    
+                }
+                updateScore();
+                nextStep();
+            })
+        })
+    }
+    nextStep();    
+    for (let i = 0; i < options.length; i++) {
+        options[i].addEventListener("click", submit);
+    }
+})
+            </script>
+    </body>
+</html>

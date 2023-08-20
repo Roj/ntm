@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "ntm"
+version = "0.1.0"
+description = ""
+authors = ["None"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+flask = "^2.3.2"
+flask-login = "^0.6.2"
+sqlalchemy = "^2.0.20"
+flask-sqlalchemy = "^3.0.5"
+oauthlib = "^3.2.2"
+requests = "^2.31.0"
+pyopenssl = "^23.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
