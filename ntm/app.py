@@ -127,13 +127,14 @@ def callback():
     if userinfo_response.json().get("email_verified"):
         unique_id = userinfo_response.json()["sub"]
         users_email = userinfo_response.json()["email"]
+        users_name = userinfo_response.json()["given_name"]
         if "@muttdata.ai" not in users_email:
             return "Please use your @muttdata.ai mail to enter!", 400
     else:
         return "User email not available or not verified by Google.", 400
 
     with Session(engine) as session:
-        user = User(email=users_email)
+        user = User(email=users_email, name=users_name)
         session.merge(user)
         session.commit()
     # Begin user session by logging the user in
@@ -164,6 +165,7 @@ def create_new_game():
             "game_id": game.id,
             "questions": questions,
             "game_length": config.GAME_LENGTH,
+            "user_name": flask_login.current_user.name
         }
 
 

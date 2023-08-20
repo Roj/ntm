@@ -221,7 +221,7 @@ def legit_etl(session):
             false_option3="Santiago Stachuk",
         ),
         Question(
-            filename="32.jpg",
+            filename="32.jpeg",
             correct_option="Aldo Escobar",
             false_option1="Mariano Re",
             false_option2="AUgusto Peña",

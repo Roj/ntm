@@ -12,16 +12,26 @@
       html {
         height: 100%;
       }
+      body { 
+        background: #edf2f9;
+      }
+      .main-box {
+        padding: 1rem;
+        background: white;
+        border-radius: 0.375rem;
+        box-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+      }
     </style>
   </head>
   <body>
     <div class="container d-flex justify-content-center align-items-center">
-      <div class="d-flex align-middle">
+      <div class="main-box">
         <p>Hi! Please login with your @muttdata.ai email :) </p>
         <p>We just use your email to prevent crawlers from downloading images and to log game stats.</p>
+        <a class="btn btn-primary" href="/login">Sign in with Google</a>
       </div>
       <br/>
-      <a class="btn btn-primary align-middle" href="/login">Sign in with Google</a>
+      
     </div>
   </body>
 </html>

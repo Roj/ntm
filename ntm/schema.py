@@ -17,6 +17,7 @@ class Base(DeclarativeBase):
 class User(UserMixin, Base):
     __tablename__ = "user"
     email: Mapped[str] = mapped_column(String(300), primary_key=True)
+    name: Mapped[str]
 
     def get_id(self):
         return self.email
