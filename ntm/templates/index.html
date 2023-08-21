@@ -2,22 +2,20 @@
     <head>
         <title>Name that mutter</title>
         <meta charset="UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
         <style>
-@media screen and (min-width: 1001px) {
+@media all and (min-width: 1001px) {
     body {
-        max-width: 800px;
-        margin: 10px auto;
-
+        height: 100%;
         background: #edf2f9;
         font-family: 'Open Sans', sans-serif;
     }
 }
-@media screen and (max-width: 1000px) {
+@media all and (max-width: 1000px) {
     body {
         background: #edf2f9;
         margin: 10px auto;
@@ -180,48 +178,49 @@ h3 { font-weight: 600;}
         </style>
     </head>
     <body>
-        <div class="game-container">
-            <h1>Name the muttito!</h1>
-            <p>In Argentina, the third Sunday of August we celebrate the children's day. 
-                While the date varies by country, they all conmemorate the same thing: the rights of children worldwide.
-                Among other things, this includes the <i>Convention on the Rights of the Child</i>. It is most widely ratified human rights treaty in history. </p>
-            <p>Childhood is a special, protected time, in which children must be allowed to grow, learn, play, develop and flourish with dignity. </p>
-            <p>We want to celebrate this day by reminiscing on the muttitos that went on to become great mutters!</p>
-            <p>Try your luck at guessing who's who, and be sure to share your score later in <b>#random</b>!</p>
-            
-            <div class="gamebox">
-                <div class="gameheader">
-                    <h3 id="gameheader-title">Who's this beautiful muttito?</h3>
-                </div>    
-                <div class="gamestate">
-                    <div id="face"></div>
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="game-container">
+                <h1>Name the muttito!</h1>
+                <p>In Argentina, the third Sunday of August we celebrate the children's day. 
+                    While the date varies by country, they all conmemorate the same thing: the rights of children worldwide.
+                    Among other things, this includes the <i>Convention on the Rights of the Child</i>. It is most widely ratified human rights treaty in history. </p>
+                <p>Childhood is a special, protected time, in which children must be allowed to grow, learn, play, develop and flourish with dignity. </p>
+                <p>We want to celebrate this day by reminiscing on the muttitos that went on to become great mutters!</p>
+                <p>Try your luck at guessing who's who, and be sure to share your score later in <b>#random</b>!</p>
+                
+                <div class="gamebox">
+                    <div class="gameheader">
+                        <h3 id="gameheader-title">Who's this beautiful muttito?</h3>
+                    </div>    
+                    <div class="gamestate">
+                        <div id="face"></div>
+                    </div>
+                    <div class="gamecontrols">
+                        <p>Select the correct option:</p>
+                        <ul>
+                            <li><input type="button" value="Pedro" class="button-7 gameoption"></li>
+                            <li><input type="button" value="Franca" class="button-7 gameoption"></li>
+                            <li><input type="button" value="Cisco" class="button-7 gameoption"></li>
+                            <li><input type="button" value="Ale R." class="button-7 gameoption"></li>
+                        </ul>
+                    </div>
+                    
+                    <br/>
                 </div>
-                <div class="gamecontrols">
-                    <p>Select the correct option:</p>
-                    <ul>
-                        <li><input type="button" value="Pedro" class="button-7 gameoption"></li>
-                        <li><input type="button" value="Franca" class="button-7 gameoption"></li>
-                        <li><input type="button" value="Cisco" class="button-7 gameoption"></li>
-                        <li><input type="button" value="Ale R." class="button-7 gameoption"></li>
-                    </ul>
+                <div class="current-score">
+                    <b>Current score:</b> <span id="score">0</span> correct out of <span id="step">0</span> so far (total <span id="total"></span>).
                 </div>
                 
-                <br/>
             </div>
-            <div class="current-score">
-                <b>Current score:</b> <span id="score">0</span> correct out of <span id="step">0</span> so far (total <span id="total"></span>).
+            <div id="endPane">
+
             </div>
-            
+            <div id="endScreen">
+                <h3>That's all!</h3>
+                <p>You got <span id="finalScore">0</span> out of <span id="finalStep">0</span> correct!</p>
+                <p><span id="scoreMessage"></span></p>
+            </div>
         </div>
-        <div id="endPane">
-
-        </div>
-        <div id="endScreen">
-            <h3>That's all!</h3>
-            <p>You got <span id="finalScore">0</span> out of <span id="finalStep">0</span> correct!</p>
-            <p><span id="scoreMessage"></span></p>
-        </div>
-
         <script language="javascript" type="text/javascript">
 
 async function createGame() {

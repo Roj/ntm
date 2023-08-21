@@ -165,7 +165,7 @@ def create_new_game():
             "game_id": game.id,
             "questions": questions,
             "game_length": config.GAME_LENGTH,
-            "user_name": flask_login.current_user.name
+            "user_name": flask_login.current_user.name,
         }
 
 
