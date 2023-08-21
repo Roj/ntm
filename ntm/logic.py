@@ -36,7 +36,7 @@ def create_assortment_of_questions(session):
         if "final" in questions_dict[i]["filename"]:
             final_pos = i
             break
-    
+
     final_question = questions_dict[final_pos]
     if final_pos != len(questions_dict) - 1:
         questions_dict = questions_dict[:final_pos] + questions_dict[final_pos + 1 :]
@@ -46,7 +46,7 @@ def create_assortment_of_questions(session):
 
 
 def make_new_game(email: str, session) -> Game:
-    game = Game(user_email=email)
+    game = Game(user_email=email, score=0, answers=0)
     session.add(game)
     session.commit()
     return game

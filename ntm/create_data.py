@@ -224,7 +224,7 @@ def legit_etl(session):
             filename="32.jpeg",
             correct_option="Aldo Escobar",
             false_option1="Mariano Re",
-            false_option2="AUgusto Peña",
+            false_option2="Augusto Peña",
             false_option3="Ignacio Vago",
         ),
         Question(

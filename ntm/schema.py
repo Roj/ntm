@@ -33,8 +33,8 @@ class Game(Base):
     __tablename__ = "game"
     id: Mapped[int] = mapped_column(primary_key=True)
     user_email: Mapped[int] = mapped_column(ForeignKey("user.email"))
-    score: Mapped[int] = 0
-    answers: Mapped[int] = 0
+    score: Mapped[int]
+    answers: Mapped[int]
 
 
 class Question(Base):
