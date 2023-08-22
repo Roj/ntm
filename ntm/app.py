@@ -200,4 +200,4 @@ def check_question_anwer():
 
 
 if __name__ == "__main__":
-    app.run(ssl_context="adhoc", port=config.SERVER_PORT, debug=True)
+    app.run(port=config.SERVER_PORT, debug=False, host="0.0.0.0")
